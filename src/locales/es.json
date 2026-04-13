@@ -1,0 +1,178 @@
+{
+  "navbar": {
+    "services": "Servicios",
+    "how_it_works": "Cómo funciona",
+    "clients": "Clientes",
+    "blog": "Blog",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Tu equipo de desarrollo,",
+    "titleHighlight": "sin construir uno",
+    "subtitle": "Profesionales tech validados y asignados para ti en hasta 7 días"
+  },
+  "loading": {
+    "text": "caminos posibles"
+  },
+  "stats": {
+    "projects": "Proyectos entregados",
+    "team": "Profesionales asignados",
+    "experience": "Años de experiencia"
+  },
+  "entryPoints": {
+    "title": "Servicios de Outsourcing de Desarrollo y Asignación de Devs",
+    "development": "Desarrollo de Software",
+    "developmentDesc": "Desarrollamos tu solución tech desde cero, con calidad garantizada.",
+    "allocation": "Asignación de Profesionales",
+    "allocationDesc": "Profesionales validados integrados en tu equipo en días.",
+    "cta": "Comenzar"
+  },
+  "outsourcing": {
+    "title": "Más que outsourcing,",
+    "titleHighlight": "asociación",
+    "description": "Ofrecemos un modelo flexible donde nuestros profesionales trabajan como si fueran parte de tu equipo. Sin sorpresas, sin rodeos."
+  },
+  "softwareHouse": {
+    "title": "La diferencia de 29Tech",
+    "features": [
+      {
+        "title": "Profesionales validados",
+        "description": "Cada uno pasó por un riguroso proceso de selección"
+      },
+      {
+        "title": "Garantía de 90 días",
+        "description": "¿No satisfecho? Hacemos el reemplazo sin costo"
+      },
+      {
+        "title": "Entrega rápida",
+        "description": "Tu profesional comienza en hasta 7 días"
+      },
+      {
+        "title": "Soporte dedicado",
+        "description": "Gestión y soporte durante toda la asignación"
+      },
+      {
+        "title": "Modelos flexibles",
+        "description": "Por hora, proyecto, mensual o anual"
+      },
+      {
+        "title": "Sin compromiso",
+        "description": "Cancela cuando quieras, sin penalizaciones"
+      }
+    ]
+  },
+  "techMarquee": {
+    "title": "TECNOLOGÍAS QUE DOMINAMOS",
+    "subtitle": "MÁS DE 30 TECNOLOGÍAS. UN ÚNICO SOCIO.",
+    "typing": "Tecnología para tu negocio. Sin necesidad de entender de tecnología.",
+    "phrases": [
+      "Tecnología para tu negocio.\nSin necesidad de entender tecnología.",
+      "Profesional asignado en hasta 7 días hábiles.\nCon garantía de 90 días.",
+      "De problema de negocio a solución tech.\nSin rodeos.",
+      "Tu equipo de tech cuando lo necesitas.\nSin el costo de mantener un equipo fijo."
+    ]
+  },
+  "testimonials": {
+    "title": "Lo que dicen nuestros clientes",
+    "clients": [
+      {
+        "quote": "Ha estado realizando un increíble trabajo en nuestro proyecto.",
+        "name": "Iwry Rozemberg",
+        "role": "CEO",
+        "company": "ClickMenos"
+      },
+      {
+        "quote": "Presenté mi necesidad y prontamente construyeron todo un prototipo en Figma.",
+        "name": "Rafael Tavares",
+        "role": "CEO",
+        "company": "Campori Online"
+      },
+      {
+        "quote": "Desde la atención inicial hasta la entrega final, su dedicación al cliente es verdaderamente impresionante.",
+        "name": "João Batista",
+        "role": "Director",
+        "company": "IASD"
+      }
+    ]
+  },
+  "darkSection": {
+    "title": "No necesitas saber de tech.",
+    "subtitle": "Necesitas saber qué quieres resolver.",
+    "description": "Nuestro equipo traduce tu desafío empresarial en tecnología.",
+    "guarantee": "Con calidad garantizada y sin rodeos.",
+    "cta": "Agendar diagnóstico gratuito"
+  },
+  "diagnostic": {
+    "title": "Diagnóstico Gratuito",
+    "badge": "Diagnóstico Gratuito",
+    "subtitle": "Entiende cuál es el mejor camino para tu empresa",
+    "description": "Contrata developers, tech leads y CTOs con estructura.\nSin rotación. Sin sorpresas.",
+    "values": {
+      "v1Title": "Squad con estructura",
+      "v1Desc": "Informe semanal, tech lead firmando la arquitectura, respaldo automático. Duermes tranquilo.",
+      "v2Title": "Sin costos ni cargas laborales",
+      "v2Desc": "Escala de 1 dev a 20. Pagas por rendimiento, no por puesto. Empieza en 2 semanas.",
+      "v3Title": "Tech lead que enseña",
+      "v3Desc": "No es solo código. Es documentación, proceso, decisiones arquitectónicas. Tu equipo crece junto."
+    },
+    "testimonial": {
+      "quote": "Las aplicaciones que desarrollamos con 29Tech fueron hechas con una metodología muy colaborativa, donde siempre teníamos validaciones constantes conmigo y con mi equipo.",
+      "name": "Daniel Carvalho",
+      "role": "Director de Comunicación, UNB"
+    },
+    "headlines": [
+      "Escala tu equipo\nsin contratar CLT",
+      "Squad dedicado\nen semanas",
+      "Tu equipo crece.\nLa gobernanza también."
+    ],
+    "revenueOptions": ["Hasta 500 mil al año", "De 500 mil a 1 MM al año", "De 1 MM a 5 MM al año", "De 5 MM+ al año"],
+    "timelineOptions": ["Inmediatamente", "Próximas 2 semanas", "Próximo mes", "Aún estoy evaluando"],
+    "validationError": "Por favor, completa todos los campos obligatorios.",
+    "fields": {
+      "name": "Nombre completo",
+      "whatsapp": "WhatsApp",
+      "email": "Correo Corporativo",
+      "revenue": "Ingresos Anuales",
+      "timeline": "¿Cuándo quieres comenzar?"
+    },
+    "button": "Agendar análisis gratuito",
+    "success": "¡Gracias!",
+    "successMessage": "Pronto nos pondremos en contacto para agendar tu diagnóstico gratuito."
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "questions": [
+      {
+        "question": "¿Cuál es la diferencia entre outsourcing y contratar a un freelancer?",
+        "answer": "Con el outsourcing de 29Tech obtienes profesionales validados con garantías de calidad y sustitución, integrados en tu proyecto en días. Con freelancers, asumes el riesgo de selección, calidad y continuidad por ti mismo."
+      },
+      {
+        "question": "¿Cuánto tiempo tarda un profesional en integrarse a mi proyecto?",
+        "answer": "El profesional se asigna en hasta 7 días hábiles después del diagnóstico y alineación de perfil."
+      },
+      {
+        "question": "¿Necesito saber de tecnología para trabajar con ustedes?",
+        "answer": "No. Nuestro equipo traduce tu desafío empresarial en tecnología. No necesitas saber de tech, necesitas saber qué quieres resolver."
+      },
+      {
+        "question": "¿Cuál es la inversión para comenzar?",
+        "answer": "Nuestros proyectos y asignaciones tienen modelos flexibles. Agenda un diagnóstico gratuito para recibir una propuesta personalizada en hasta 48 horas."
+      }
+    ]
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Perspectivas sobre tecnología, outsourcing y crecimiento digital.",
+    "empty": "Aún no hay artículos publicados.",
+    "back": "Volver al Blog",
+    "source": "Fuente",
+    "notFound": "Artículo no encontrado."
+  },
+  "footer": {
+    "copyright": "© 2026 29Tech",
+    "email": "contato@vintenove.com",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook"
+  }
+}

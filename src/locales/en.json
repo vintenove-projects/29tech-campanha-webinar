@@ -1,0 +1,178 @@
+{
+  "navbar": {
+    "services": "Services",
+    "how_it_works": "How it works",
+    "clients": "Clients",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Your development team,",
+    "titleHighlight": "without building one",
+    "subtitle": "Validated tech professionals allocated to you in up to 7 days"
+  },
+  "loading": {
+    "text": "possible paths"
+  },
+  "stats": {
+    "projects": "Projects delivered",
+    "team": "Professionals allocated",
+    "experience": "Years of experience"
+  },
+  "entryPoints": {
+    "title": "Software Development Outsourcing and Dev Allocation Services",
+    "development": "Software Development",
+    "developmentDesc": "We develop your tech solution from scratch, with guaranteed quality.",
+    "allocation": "Professional Allocation",
+    "allocationDesc": "Validated professionals integrated into your team in days.",
+    "cta": "Get started"
+  },
+  "outsourcing": {
+    "title": "More than outsourcing,",
+    "titleHighlight": "partnership",
+    "description": "We offer a flexible model where our professionals work as if they were part of your team. No surprises, no nonsense."
+  },
+  "softwareHouse": {
+    "title": "The 29Tech difference",
+    "features": [
+      {
+        "title": "Validated professionals",
+        "description": "Each one passed through a rigorous selection process"
+      },
+      {
+        "title": "90-day guarantee",
+        "description": "Not satisfied? We replace them at no cost"
+      },
+      {
+        "title": "Fast delivery",
+        "description": "Your professional starts in up to 7 days"
+      },
+      {
+        "title": "Dedicated support",
+        "description": "Management and support throughout the allocation"
+      },
+      {
+        "title": "Flexible models",
+        "description": "Hourly, project, monthly or annual"
+      },
+      {
+        "title": "No commitment",
+        "description": "Cancel anytime, with no penalties"
+      }
+    ]
+  },
+  "techMarquee": {
+    "title": "TECHNOLOGIES WE MASTER",
+    "subtitle": "MORE THAN 30 TECHNOLOGIES. ONE SINGLE PARTNER.",
+    "typing": "Technology for your business. Without needing to understand technology.",
+    "phrases": [
+      "Technology for your business.\nWithout needing to understand technology.",
+      "Professional allocated within 7 business days.\nWith 90-day guarantee.",
+      "From business problem to tech solution.\nNo nonsense.",
+      "Your tech team when you need it.\nWithout the cost of maintaining a fixed team."
+    ]
+  },
+  "testimonials": {
+    "title": "What our clients say",
+    "clients": [
+      {
+        "quote": "Has been doing incredible work on our project.",
+        "name": "Iwry Rozemberg",
+        "role": "CEO",
+        "company": "ClickMenos"
+      },
+      {
+        "quote": "I presented my need and they promptly built an entire prototype in Figma.",
+        "name": "Rafael Tavares",
+        "role": "CEO",
+        "company": "Campori Online"
+      },
+      {
+        "quote": "From the initial contact to the final delivery, their dedication to the client is truly impressive.",
+        "name": "João Batista",
+        "role": "Director",
+        "company": "IASD"
+      }
+    ]
+  },
+  "darkSection": {
+    "title": "You don't need to know tech.",
+    "subtitle": "You need to know what you want to solve.",
+    "description": "Our team translates your business challenge into technology.",
+    "guarantee": "With guaranteed quality and no nonsense.",
+    "cta": "Schedule free diagnosis"
+  },
+  "diagnostic": {
+    "title": "Free Diagnosis",
+    "badge": "Free Diagnosis",
+    "subtitle": "Understand the best path for your company",
+    "description": "Hire developers, tech leads and CTOs with structure.\nNo turnover. No surprises.",
+    "values": {
+      "v1Title": "Squad with structure",
+      "v1Desc": "Weekly report, tech lead signing off on architecture, automatic backup. Sleep soundly.",
+      "v2Title": "No labor costs and charges",
+      "v2Desc": "Scale from 1 to 20 devs. Pay for performance, not headcount. Starts in 2 weeks.",
+      "v3Title": "Tech lead who teaches",
+      "v3Desc": "It's not just code. It's documentation, process, architectural decisions. Your team grows together."
+    },
+    "testimonial": {
+      "quote": "The apps we developed with 29Tech were built with a very collaborative methodology, where we always had constant validations with me and my team.",
+      "name": "Daniel Carvalho",
+      "role": "Communication Director, UNB"
+    },
+    "headlines": [
+      "Scale your team\nwithout CLT hiring",
+      "Dedicated squad\nin weeks",
+      "Your team grows.\nGovernance too."
+    ],
+    "revenueOptions": ["Up to 500k per year", "From 500k to 1M per year", "From 1M to 5M per year", "From 5M+ per year"],
+    "timelineOptions": ["Immediately", "Next 2 weeks", "Next month", "Still evaluating"],
+    "validationError": "Please fill in all required fields.",
+    "fields": {
+      "name": "Full name",
+      "whatsapp": "WhatsApp",
+      "email": "Corporate Email",
+      "revenue": "Annual Revenue",
+      "timeline": "When do you want to start?"
+    },
+    "button": "Schedule free analysis",
+    "success": "Thank you!",
+    "successMessage": "We'll soon contact you to schedule your free diagnosis."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "questions": [
+      {
+        "question": "What's the difference between outsourcing and hiring a freelancer?",
+        "answer": "With 29Tech outsourcing you get validated professionals with quality and replacement guarantees, integrated into your project in days. With freelancers, you assume the selection, quality, and continuity risks yourself."
+      },
+      {
+        "question": "How long does it take for a professional to join my project?",
+        "answer": "The professional is allocated within 7 business days after diagnosis and profile alignment."
+      },
+      {
+        "question": "Do I need to know about technology to work with you?",
+        "answer": "No. Our team translates your business challenge into technology. You don't need to know tech, you need to know what you want to solve."
+      },
+      {
+        "question": "What's the investment to start?",
+        "answer": "Our projects and allocations have flexible models. Schedule a free diagnosis to receive a personalized proposal within 48 hours."
+      }
+    ]
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Insights on technology, outsourcing and digital growth.",
+    "empty": "No articles published yet.",
+    "back": "Back to Blog",
+    "source": "Source",
+    "notFound": "Article not found."
+  },
+  "footer": {
+    "copyright": "© 2026 29Tech",
+    "email": "contato@vintenove.com",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "facebook": "Facebook"
+  }
+}
