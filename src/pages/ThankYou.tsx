@@ -8,7 +8,7 @@ const ThankYou = () => {
       {/* Header */}
       <header className="w-full py-6 px-4">
         <div className="max-w-4xl mx-auto flex justify-center">
-          <img src={logo29Tech} alt="29Tech" className="h-8" />
+          <img src={logo29Tech} alt="29Tech" className="h-12 sm:h-14" />
         </div>
       </header>
 

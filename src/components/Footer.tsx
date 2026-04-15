@@ -33,7 +33,7 @@ const Footer = () => {
       <footer className="bg-foreground py-10 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center gap-6 sm:gap-8 md:flex-row md:justify-between">
           <a href="#">
-            <img src={logo} alt="29Tech" className="h-7 sm:h-8 brightness-0 invert" />
+            <img src={logo} alt="29Tech" className="h-9 sm:h-10 brightness-0 invert" />
           </a>
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">

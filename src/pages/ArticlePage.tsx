@@ -25,7 +25,7 @@ const ArticleNavbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="/" onClick={(e) => { e.preventDefault(); navigate("/"); }}>
-          <img src={logo} alt="29Tech" className="h-10" style={{ filter: "brightness(0) invert(1)" }} />
+          <img src={logo} alt="29Tech" className="h-12 sm:h-14" style={{ filter: "brightness(0) invert(1)" }} />
         </a>
         <a
           href="#contato"
