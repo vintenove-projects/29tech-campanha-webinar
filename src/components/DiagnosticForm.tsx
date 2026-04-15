@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 
 const DiagnosticLeftSide = () => {
   const { t } = useTranslation();
