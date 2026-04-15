@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Target, Rocket, Cpu, Layers, Settings, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Target, Rocket, Cpu, Layers, Settings, ArrowRight, CheckCircle2, BookOpen, Users, TrendingDown, Award, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 
 // Logos
