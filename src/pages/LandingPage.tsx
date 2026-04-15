@@ -138,8 +138,6 @@ const LogoRow = ({ reverse = false, duration = 25 }: { reverse?: boolean; durati
               style={{ filter: "brightness(0) opacity(0.4)", minHeight: 28 }}
               loading="lazy"
             />
-              loading="lazy"
-            />
           </div>
         ))
       )}
