@@ -119,7 +119,7 @@ const FadeIn = ({ children, className = "", delay = 0 }: { children: React.React
 
 /* ─── Logo Row ─── */
 const LogoRow = ({ reverse = false, duration = 25 }: { reverse?: boolean; duration?: number }) => (
-  <div className="relative overflow-hidden py-2">
+  <div className="relative overflow-hidden py-1.5">
     <div
       className="flex"
       style={{
@@ -129,12 +129,12 @@ const LogoRow = ({ reverse = false, duration = 25 }: { reverse?: boolean; durati
     >
       {[...Array(4)].map((_, setIdx) =>
         clientLogos.map((logo, i) => (
-          <div key={`${setIdx}-${i}`} className="flex-shrink-0 mx-6 sm:mx-8 flex items-center justify-center" style={{ minWidth: 140 }}>
+          <div key={`${setIdx}-${i}`} className="flex-shrink-0 mx-4 sm:mx-8 flex items-center justify-center" style={{ minWidth: 100 }}>
             <img
               src={logo.src}
               alt={logo.alt}
-              className="h-8 sm:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
-              style={{ filter: "brightness(0) opacity(0.4)", maxWidth: 150 }}
+              className="h-6 sm:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+              style={{ filter: "brightness(0) opacity(0.4)", maxWidth: 120 }}
               loading="lazy"
             />
           </div>
