@@ -125,7 +125,7 @@
       "Squad dedicado\nen semanas",
       "Tu equipo crece.\nLa gobernanza también."
     ],
-    "revenueOptions": ["Hasta 500 mil al año", "De 500 mil a 1 MM al año", "De 1 MM a 5 MM al año", "De 5 MM+ al año"],
+    "revenueOptions": ["Menos de $80 mil/mes", "De $80 mil a $300 mil/mes", "De $300 mil a $1 MM/mes", "Más de $1 MM/mes"],
     "timelineOptions": ["Inmediatamente", "Próximas 2 semanas", "Próximo mes", "Aún estoy evaluando"],
     "validationError": "Por favor, completa todos los campos obligatorios.",
     "fields": {

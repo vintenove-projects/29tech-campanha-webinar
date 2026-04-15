@@ -125,7 +125,7 @@
       "Squad dedicado\nem semanas",
       "A sua equipa cresce.\nGovernança também."
     ],
-    "revenueOptions": ["Até 500 mil por ano", "De 500 mil a 1 MM por ano", "De 1 MM a 5 MM por ano", "De 5 MM+ por ano"],
+    "revenueOptions": ["Abaixo de 80 mil€/mês", "De 80 mil€ a 300 mil€/mês", "De 300 mil€ a 1 MM€/mês", "Acima de 1 MM€/mês"],
     "timelineOptions": ["Imediatamente", "Próximas 2 semanas", "Próximo mês", "Ainda estou a avaliar"],
     "validationError": "Por favor, preencha todos os campos obrigatórios.",
     "fields": {
