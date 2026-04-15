@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import LandingPage from "./pages/LandingPage.tsx";
 import ThankYou from "./pages/ThankYou.tsx";
+import NotQualified from "./pages/NotQualified.tsx";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
           <Route path="/" element={<LandingPage />} />
           <Route path="/lp" element={<LandingPage />} />
           <Route path="/obrigado" element={<ThankYou />} />
+          <Route path="/nao-qualificado" element={<NotQualified />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
