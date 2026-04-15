@@ -139,12 +139,11 @@ const DiagnosticForm = () => {
         }
       );
 
-      // Qualification: first revenue option (below 80k) OR no website → not qualified
+      // Qualification: first revenue option (below 80k) → not qualified
       const revenueOptions = t("diagnostic.revenueOptions", { returnObjects: true }) as string[];
       const isLowRevenue = form.receita === revenueOptions[0];
-      const hasNoSite = form.site.trim() === "";
       
-      if (isLowRevenue || hasNoSite) {
+      if (isLowRevenue) {
         navigate("/nao-qualificado");
       } else {
         navigate("/obrigado");
