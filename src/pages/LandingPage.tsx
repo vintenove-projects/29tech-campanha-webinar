@@ -5,6 +5,7 @@ import { Target, Rocket, Cpu, Layers, Settings, ArrowRight, CheckCircle2, BookOp
 import { motion } from "framer-motion";
 
 // Logos
+import logo29Tech from "@/assets/logo-29tech.png";
 import logoOab from "@/assets/logos/oab.png";
 import logoHortolandia from "@/assets/logos/hortolandia.png";
 import logoSynkro from "@/assets/logos/synkro.png";
