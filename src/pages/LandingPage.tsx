@@ -378,7 +378,9 @@ const LandingPage = () => {
                 </button>
 
                 <p className="text-[10px] text-foreground/35 text-center tracking-wide leading-relaxed">
-                  Ao clicar em "Enviar para Análise", você aceita nossos termos e políticas de privacidade. Seus dados estão 100% seguros.
+                  Ao clicar em "Enviar para Análise", você aceita<br />
+                  nossos termos e políticas de privacidade.<br />
+                  Seus dados estão 100% seguros.
                 </p>
               </form>
             </div>
