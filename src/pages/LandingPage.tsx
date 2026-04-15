@@ -214,7 +214,7 @@ const LandingPage = () => {
         <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 w-full py-16 sm:py-20 text-center">
           <FadeIn>
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 text-white text-xs sm:text-sm font-medium mb-8 sm:mb-10 backdrop-blur-sm">
-              <Rocket className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> 29Tech — Engenharia de Software com IA
+              <Rocket className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> 29Tech - Software House Global
             </span>
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white mb-5 sm:mb-6 max-w-4xl mx-auto">
               Pare de esperar meses por software:{" "}
@@ -226,7 +226,7 @@ const LandingPage = () => {
               Desenvolvemos soluções personalizadas com IA para reduzir seus custos operacionais e escalar sua empresa. Se o seu projeto for aprovado, você testa o MVP funcional na segunda reunião e recebe o software completo em até 30 dias.
             </p>
             <button onClick={scrollToForm} className="group inline-flex items-center gap-2 sm:gap-3 rounded-full bg-white px-7 py-4 sm:px-10 sm:py-5 text-primary font-bold text-base sm:text-lg hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(255,255,255,0.3)]">
-              QUERO DESENVOLVER O MEU PROJETO
+              QUERO MEU PROJETO
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </FadeIn>
