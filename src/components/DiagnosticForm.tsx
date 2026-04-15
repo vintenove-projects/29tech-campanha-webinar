@@ -142,8 +142,9 @@ const DiagnosticForm = () => {
       // Qualification: first revenue option (below 80k) → not qualified
       const revenueOptions = t("diagnostic.revenueOptions", { returnObjects: true }) as string[];
       const isLowRevenue = form.receita === revenueOptions[0];
+      const hasNoSite = !form.site || form.site.trim() === "";
       
-      if (isLowRevenue) {
+      if (isLowRevenue || hasNoSite) {
         navigate("/nao-qualificado");
       } else {
         navigate("/obrigado");
