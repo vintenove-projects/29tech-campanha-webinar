@@ -1,6 +1,6 @@
 import { XCircle, Instagram, Linkedin, Globe } from "lucide-react";
 import { motion } from "framer-motion";
-import logo29Tech from "@/assets/logo-29tech.png";
+import logo29Tech from "@/assets/logo-29tech-orange.png";
 
 const NotQualified = () => {
   return (
