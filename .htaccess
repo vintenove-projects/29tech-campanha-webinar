@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirect lpsoftware.vintenove.com to Vercel
+  RewriteCond %{HTTP_HOST} ^lpsoftware\.vintenove\.com$ [OR]
+  RewriteCond %{HTTP_HOST} ^www\.lpsoftware\.vintenove\.com$
+  RewriteRule ^(.*)$ https://29tech-campanha-software.vercel.app/$1 [L,R=301]
+</IfModule>
