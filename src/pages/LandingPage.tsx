@@ -148,7 +148,7 @@ const LogoRow = ({ reverse = false, duration = 25 }: { reverse?: boolean; durati
 const LogoMarquee = () => (
   <section className="py-10 sm:py-20 overflow-hidden bg-white">
     <FadeIn className="text-center mb-6 sm:mb-10">
-      <p className="text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase text-primary/40">Empresas que confiam na 29Tech</p>
+      <p className="text-[10px] sm:text-xs font-bold tracking-[0.3em] uppercase text-foreground/40">Empresas que confiam na 29Tech</p>
     </FadeIn>
     <div className="relative space-y-2 sm:space-y-3">
       <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 z-10 bg-gradient-to-r from-white to-transparent" />
@@ -222,7 +222,7 @@ const LandingPage = () => {
                 Você traz o desafio hoje e vê o MVP pronto no nosso próximo encontro.
               </span>
             </h1>
-            <p className="text-white/75 text-sm sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed">
+            <p className="text-white/90 text-sm sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed">
               Desenvolvemos soluções personalizadas com IA para reduzir seus custos operacionais e escalar sua empresa. Se o seu projeto for aprovado, você testa o MVP funcional na segunda reunião e recebe o software completo em até 30 dias.
             </p>
             <button onClick={scrollToForm} className="group inline-flex items-center gap-2 sm:gap-3 rounded-full bg-white px-7 py-4 sm:px-10 sm:py-5 text-primary font-bold text-base sm:text-lg hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(255,255,255,0.3)]">
@@ -243,10 +243,10 @@ const LandingPage = () => {
           <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/15 border border-white/25 flex items-center justify-center mx-auto mb-6 sm:mb-8">
             <Target className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
           </div>
-          <p className="text-lg sm:text-2xl md:text-3xl text-white/80 leading-relaxed font-light">
+          <p className="text-lg sm:text-2xl md:text-3xl text-white/90 leading-relaxed font-light">
             O mercado não espera. Cada dia com processos manuais ou softwares lentos é{" "}
             <span className="text-white font-semibold">dinheiro saindo do seu caixa</span>. Você não precisa de um cronograma de 6 meses; precisa de{" "}
-            <span className="text-white font-bold underline decoration-white/40 underline-offset-4">execução 29Tech</span>.
+            <span className="text-white font-bold underline decoration-white/50 underline-offset-4">execução 29Tech</span>.
           </p>
         </FadeIn>
       </section>
@@ -258,7 +258,7 @@ const LandingPage = () => {
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-primary mb-2 sm:mb-3">
               Método 29Tech
             </h2>
-            <p className="text-primary/40 text-sm sm:text-lg">Do desafio à solução em 3 passos.</p>
+            <p className="text-foreground/50 text-sm sm:text-lg">Do desafio à solução em 3 passos.</p>
           </FadeIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8">
@@ -272,9 +272,9 @@ const LandingPage = () => {
                   <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:bg-primary/20 transition-colors">
                     <item.icon className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
                   </div>
-                  <span className="text-[10px] sm:text-[11px] font-bold text-primary/40 tracking-[0.25em]">PASSO {item.step}</span>
-                  <h3 className="text-lg sm:text-xl font-bold mt-2 mb-2 sm:mb-3 text-primary">{item.title}</h3>
-                  <p className="text-primary/50 leading-relaxed text-xs sm:text-sm">{item.desc}</p>
+                  <span className="text-[10px] sm:text-[11px] font-bold text-foreground/35 tracking-[0.25em]">PASSO {item.step}</span>
+                  <h3 className="text-lg sm:text-xl font-bold mt-2 mb-2 sm:mb-3 text-foreground">{item.title}</h3>
+                  <p className="text-foreground/60 leading-relaxed text-xs sm:text-sm">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -328,9 +328,9 @@ const LandingPage = () => {
                   </div>
                   <div className="flex-1 sm:flex-none">
                     <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white mb-1 sm:mb-2">{item.stat}</h3>
-                    <p className="text-white/60 leading-relaxed text-xs sm:text-sm">{item.desc}</p>
+                    <p className="text-white/80 leading-relaxed text-xs sm:text-sm">{item.desc}</p>
                     {item.link && (
-                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-2 sm:mt-3 inline-flex items-center gap-1 text-xs font-semibold text-white/80 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-white/60 transition-colors">
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-2 sm:mt-3 inline-flex items-center gap-1 text-xs font-semibold text-white hover:text-white underline underline-offset-4 decoration-white/50 hover:decoration-white transition-colors">
                         {item.linkLabel} <ArrowRight className="w-3 h-3" />
                       </a>
                     )}
@@ -350,7 +350,7 @@ const LandingPage = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-2 text-primary">
                 Inicie sua Qualificação
               </h2>
-              <p className="text-primary/40 text-center mb-8 sm:mb-10 text-xs sm:text-sm">Preencha os dados abaixo para começarmos.</p>
+              <p className="text-foreground/50 text-center mb-8 sm:mb-10 text-xs sm:text-sm">Preencha os dados abaixo para começarmos.</p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <LPInput label="Nome Completo" name="name" value={form.name} onChange={handleChange} required />
@@ -358,9 +358,9 @@ const LandingPage = () => {
                 <LPInput label="Site da Empresa" name="website" placeholder="www.suaempresa.com.br" value={form.website} onChange={handleChange} />
 
                 <div>
-                  <label className="block text-xs font-semibold text-primary/50 mb-2 tracking-wide uppercase">Faturamento Mensal</label>
+                  <label className="block text-xs font-semibold text-foreground/60 mb-2 tracking-wide uppercase">Faturamento Mensal</label>
                   <select name="monthly_revenue" value={form.monthly_revenue} onChange={handleChange} required
-                    className="w-full px-4 py-3 rounded-xl border-2 border-primary/15 bg-white text-primary/80 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none">
+                    className="w-full px-4 py-3 rounded-xl border-2 border-primary/15 bg-white text-foreground text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none">
                     <option value="">Selecione</option>
                     <option>R$ 80k a R$ 200k</option>
                     <option>R$ 200k a R$ 500k</option>
@@ -374,7 +374,7 @@ const LandingPage = () => {
                   {submitting ? "Enviando..." : "ENVIAR PARA ANÁLISE"}
                 </button>
 
-                <p className="text-[10px] text-primary/25 text-center tracking-wide leading-relaxed">
+                <p className="text-[10px] text-foreground/35 text-center tracking-wide leading-relaxed">
                   Ao clicar em "Enviar para Análise", você aceita nossos termos e políticas de privacidade. Seus dados estão 100% seguros.
                 </p>
               </form>
@@ -384,7 +384,7 @@ const LandingPage = () => {
       </section>
 
       {/* ══════════ FOOTER ══════════ */}
-      <footer className="py-8 text-center text-white/50 text-xs bg-primary border-t border-white/10 tracking-wide">
+      <footer className="py-8 text-center text-white/80 text-xs bg-primary border-t border-white/15 tracking-wide">
         © {new Date().getFullYear()} 29Tech. Todos os direitos reservados.
       </footer>
     </div>
@@ -397,9 +397,9 @@ const LPInput = ({ label, name, value, onChange, type = "text", placeholder, req
   type?: string; placeholder?: string; required?: boolean;
 }) => (
   <div>
-    <label className="block text-xs font-semibold text-primary/50 mb-2 tracking-wide uppercase">{label}</label>
+    <label className="block text-xs font-semibold text-foreground/60 mb-2 tracking-wide uppercase">{label}</label>
     <input type={type} name={name} value={value} onChange={onChange} required={required} placeholder={placeholder}
-      className="w-full px-4 py-3 rounded-xl border-2 border-primary/15 bg-white text-primary/80 text-sm placeholder:text-primary/25 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" />
+      className="w-full px-4 py-3 rounded-xl border-2 border-primary/15 bg-white text-foreground text-sm placeholder:text-foreground/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" />
   </div>
 );
 
