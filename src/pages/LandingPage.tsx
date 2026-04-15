@@ -283,7 +283,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* ══════════ VALOR — Laranja ══════════ */}
+      {/* ══════════ POR QUE A 29TECH — Prova Social ══════════ */}
       <section className="py-24 sm:py-32 px-4 relative overflow-hidden bg-primary">
         <ParticleCanvas color="rgba(255,255,255,0.10)" />
         <div className="relative z-10 max-w-5xl mx-auto">
@@ -292,19 +292,48 @@ const LandingPage = () => {
               Por que a 29Tech
             </h2>
           </FadeIn>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-5">
             {[
-              { icon: Settings, title: "Personalização Total", desc: "O software se adapta ao seu processo, não o contrário." },
-              { icon: Cpu, title: "Integração com IA", desc: "Automações nativas para máxima eficiência operacional." },
-              { icon: Layers, title: "Arquitetura Escalável", desc: "Tecnologia de elite pronta para o crescimento da sua demanda." },
+              {
+                icon: BookOpen,
+                stat: "Framework 29",
+                desc: "Metodologia própria de desenvolvimento, testada e publicada em artigo científico.",
+              },
+              {
+                icon: Users,
+                stat: "+100",
+                desc: "Empresas atendidas com soluções de software personalizadas.",
+              },
+              {
+                icon: TrendingDown,
+                stat: "<8%",
+                desc: "Churn dos nossos clientes. Retenção é consequência de resultado.",
+              },
+              {
+                icon: Award,
+                stat: "ISTOÉ",
+                desc: "Reconhecimento de mercado.",
+                link: "https://www.instagram.com/p/DTTeQElDP8E/",
+                linkLabel: "Ver publicação",
+              },
+              {
+                icon: Globe,
+                stat: "Global",
+                desc: "Clientes atendidos no Brasil e na Europa.",
+              },
             ].map((item, i) => (
-              <FadeIn key={item.title} delay={i * 0.1}>
-                <div className="group p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 h-full">
-                  <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mb-6 group-hover:bg-white/30 transition-colors">
-                    <item.icon className="w-7 h-7 text-white" />
+              <FadeIn key={item.stat} delay={i * 0.08}>
+                <div className="group p-6 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 h-full flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center mb-4 group-hover:bg-white/25 transition-colors">
+                    <item.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-white/70 leading-relaxed">{item.desc}</p>
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">{item.stat}</h3>
+                  <p className="text-white/60 leading-relaxed text-sm">{item.desc}</p>
+                  {item.link && (
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-white/80 hover:text-white underline underline-offset-4 decoration-white/30 hover:decoration-white/60 transition-colors">
+                      {item.linkLabel} <ArrowRight className="w-3 h-3" />
+                    </a>
+                  )}
                 </div>
               </FadeIn>
             ))}
