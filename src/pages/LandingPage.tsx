@@ -226,7 +226,7 @@ const LandingPage = () => {
               Desenvolvemos soluções personalizadas com IA para reduzir seus custos operacionais e escalar sua empresa. Se o seu projeto for aprovado, você testa o MVP funcional na segunda reunião e recebe o software completo em até 30 dias.
             </p>
             <button onClick={scrollToForm} className="group inline-flex items-center gap-2 sm:gap-3 rounded-full bg-white px-7 py-4 sm:px-10 sm:py-5 text-primary font-bold text-base sm:text-lg hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(255,255,255,0.3)]">
-              QUERO QUALIFICAR MEU PROJETO
+              QUERO DESENVOLVER O MEU PROJETO
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </FadeIn>
