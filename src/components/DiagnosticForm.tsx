@@ -125,6 +125,7 @@ const DiagnosticForm = () => {
       formData.append("nome", form.nome);
       formData.append("whatsapp", form.whatsapp);
       formData.append("email", form.email);
+      formData.append("site", form.site);
       formData.append("receita", form.receita);
       formData.append("prazo", form.prazo);
       formData.append("data", new Date().toLocaleString("pt-BR"));
@@ -138,7 +139,16 @@ const DiagnosticForm = () => {
         }
       );
 
-      setSubmitted(true);
+      // Qualification: first revenue option (below 80k) OR no website → not qualified
+      const revenueOptions = t("diagnostic.revenueOptions", { returnObjects: true }) as string[];
+      const isLowRevenue = form.receita === revenueOptions[0];
+      const hasNoSite = form.site.trim() === "";
+      
+      if (isLowRevenue || hasNoSite) {
+        navigate("/nao-qualificado");
+      } else {
+        navigate("/obrigado");
+      }
     } catch (error) {
       console.error("Erro ao enviar:", error);
       alert(i18n.language === 'pt-BR' || i18n.language === 'pt-PT'
