@@ -117,30 +117,45 @@ const FadeIn = ({ children, className = "", delay = 0 }: { children: React.React
   </motion.div>
 );
 
-/* ─── Logo Marquee (big and expressive) ─── */
+/* ─── Logo Row ─── */
+const LogoRow = ({ reverse = false, duration = 25 }: { reverse?: boolean; duration?: number }) => (
+  <div className="relative overflow-hidden py-2">
+    <div
+      className="flex"
+      style={{
+        width: "max-content",
+        animation: `${reverse ? "marquee-reverse" : "marquee"} ${duration}s linear infinite`,
+      }}
+    >
+      {[...Array(4)].map((_, setIdx) =>
+        clientLogos.map((logo, i) => (
+          <div key={`${setIdx}-${i}`} className="flex-shrink-0 mx-6 sm:mx-8 flex items-center justify-center" style={{ minWidth: 140 }}>
+            <img
+              src={logo.src}
+              alt={logo.alt}
+              className="h-8 sm:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+              style={{ filter: "brightness(0) opacity(0.4)", maxWidth: 150 }}
+              loading="lazy"
+            />
+          </div>
+        ))
+      )}
+    </div>
+  </div>
+);
+
+/* ─── Logo Marquee (3 rows, alternating directions) ─── */
 const LogoMarquee = () => (
-  <section className="py-20 sm:py-28 overflow-hidden bg-white">
-    <FadeIn className="text-center mb-14">
+  <section className="py-14 sm:py-20 overflow-hidden bg-white">
+    <FadeIn className="text-center mb-10">
       <p className="text-xs font-bold tracking-[0.3em] uppercase text-primary/40">Empresas que confiam na 29Tech</p>
     </FadeIn>
-    <div className="relative">
-      <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-white to-transparent" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-white to-transparent" />
-      <div className="flex animate-[marquee_30s_linear_infinite]" style={{ width: "max-content" }}>
-        {[...Array(3)].map((_, setIdx) =>
-          clientLogos.map((logo, i) => (
-            <div key={`${setIdx}-${i}`} className="flex-shrink-0 mx-8 sm:mx-12 flex items-center justify-center" style={{ minWidth: 180 }}>
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="h-16 sm:h-20 md:h-24 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                style={{ filter: "brightness(0) opacity(0.35)", maxWidth: 200 }}
-                loading="lazy"
-              />
-            </div>
-          ))
-        )}
-      </div>
+    <div className="relative space-y-3">
+      <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-white to-transparent" />
+      <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-white to-transparent" />
+      <LogoRow duration={28} />
+      <LogoRow reverse duration={22} />
+      <LogoRow duration={32} />
     </div>
   </section>
 );
