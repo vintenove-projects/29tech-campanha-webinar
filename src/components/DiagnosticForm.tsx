@@ -245,7 +245,23 @@ const DiagnosticForm = () => {
               </div>
 
 
-              {/* Receita */}
+              {/* Site */}
+              <div>
+                <label className="text-white text-sm font-medium mb-2 block">
+                  {i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "Site da empresa" :
+                   i18n.language === 'en' ? "Company website" : "Sitio web de la empresa"}
+                  <span className="text-white/50 font-normal ml-1">{i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "(opcional)" :
+                   i18n.language === 'en' ? "(optional)" : "(opcional)"}</span>
+                </label>
+                <input
+                  type="url"
+                  placeholder="https://suaempresa.com.br"
+                  value={form.site}
+                  onChange={(e) => setForm({ ...form, site: e.target.value })}
+                  className="w-full rounded-lg border-2 border-white/50 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/80 focus:border-white transition-colors"
+                />
+              </div>
+
               <div>
                 <label className="text-white text-sm font-medium mb-2 block">
                   {t("diagnostic.fields.revenue")}
