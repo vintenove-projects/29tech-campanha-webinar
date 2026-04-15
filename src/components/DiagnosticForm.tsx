@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const DiagnosticLeftSide = () => {
   const { t } = useTranslation();
@@ -84,11 +85,13 @@ const DiagnosticLeftSide = () => {
 };
 
 const DiagnosticForm = () => {
+  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [form, setForm] = useState({
     nome: "",
     whatsapp: "",
     email: "",
+    site: "",
     receita: "",
     prazo: ""
   });
@@ -122,6 +125,7 @@ const DiagnosticForm = () => {
       formData.append("nome", form.nome);
       formData.append("whatsapp", form.whatsapp);
       formData.append("email", form.email);
+      formData.append("site", form.site);
       formData.append("receita", form.receita);
       formData.append("prazo", form.prazo);
       formData.append("data", new Date().toLocaleString("pt-BR"));
@@ -135,7 +139,16 @@ const DiagnosticForm = () => {
         }
       );
 
-      setSubmitted(true);
+      // Qualification: first revenue option (below 80k) OR no website → not qualified
+      const revenueOptions = t("diagnostic.revenueOptions", { returnObjects: true }) as string[];
+      const isLowRevenue = form.receita === revenueOptions[0];
+      const hasNoSite = form.site.trim() === "";
+      
+      if (isLowRevenue || hasNoSite) {
+        navigate("/nao-qualificado");
+      } else {
+        navigate("/obrigado");
+      }
     } catch (error) {
       console.error("Erro ao enviar:", error);
       alert(i18n.language === 'pt-BR' || i18n.language === 'pt-PT'
@@ -232,7 +245,23 @@ const DiagnosticForm = () => {
               </div>
 
 
-              {/* Receita */}
+              {/* Site */}
+              <div>
+                <label className="text-white text-sm font-medium mb-2 block">
+                  {i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "Site da empresa" :
+                   i18n.language === 'en' ? "Company website" : "Sitio web de la empresa"}
+                  <span className="text-white/50 font-normal ml-1">{i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "(opcional)" :
+                   i18n.language === 'en' ? "(optional)" : "(opcional)"}</span>
+                </label>
+                <input
+                  type="url"
+                  placeholder="https://suaempresa.com.br"
+                  value={form.site}
+                  onChange={(e) => setForm({ ...form, site: e.target.value })}
+                  className="w-full rounded-lg border-2 border-white/50 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/80 focus:border-white transition-colors"
+                />
+              </div>
+
               <div>
                 <label className="text-white text-sm font-medium mb-2 block">
                   {t("diagnostic.fields.revenue")}

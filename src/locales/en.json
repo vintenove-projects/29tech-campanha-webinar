@@ -125,7 +125,7 @@
       "Dedicated squad\nin weeks",
       "Your team grows.\nGovernance too."
     ],
-    "revenueOptions": ["Up to 500k per year", "From 500k to 1M per year", "From 1M to 5M per year", "From 5M+ per year"],
+    "revenueOptions": ["Below $80k/month", "From $80k to $300k/month", "From $300k to $1M/month", "Above $1M/month"],
     "timelineOptions": ["Immediately", "Next 2 weeks", "Next month", "Still evaluating"],
     "validationError": "Please fill in all required fields.",
     "fields": {
