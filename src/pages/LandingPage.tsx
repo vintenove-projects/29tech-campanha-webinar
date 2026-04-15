@@ -163,24 +163,23 @@ const LogoMarquee = () => (
 /* ─── Main LP ─── */
 const LandingPage = () => {
   const [form, setForm] = useState({
-    name: "", whatsapp: "", role: "", company: "", monthly_revenue: "", main_challenge: "", terms_accepted: false,
+    name: "", whatsapp: "", website: "", monthly_revenue: "",
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value, type } = e.target;
-    setForm((prev) => ({ ...prev, [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value }));
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.terms_accepted) { toast.error("Aceite os termos para continuar."); return; }
     setSubmitting(true);
     const { error } = await supabase.from("lead_qualifications").insert({
-      name: form.name.trim(), whatsapp: form.whatsapp.trim(), role: form.role.trim(),
-      company: form.company.trim(), monthly_revenue: form.monthly_revenue,
-      main_challenge: form.main_challenge.trim(), terms_accepted: form.terms_accepted,
+      name: form.name.trim(), whatsapp: form.whatsapp.trim(),
+      website: form.website.trim(), monthly_revenue: form.monthly_revenue,
+      terms_accepted: true,
     });
     setSubmitting(false);
     if (error) { toast.error("Erro ao enviar. Tente novamente."); return; }
@@ -356,10 +355,7 @@ const LandingPage = () => {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <LPInput label="Nome Completo" name="name" value={form.name} onChange={handleChange} required />
                 <LPInput label="WhatsApp com DDD" name="whatsapp" type="tel" placeholder="(11) 99999-9999" value={form.whatsapp} onChange={handleChange} required />
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <LPInput label="Cargo" name="role" value={form.role} onChange={handleChange} required />
-                  <LPInput label="Empresa" name="company" value={form.company} onChange={handleChange} required />
-                </div>
+                <LPInput label="Site da Empresa" name="website" placeholder="www.suaempresa.com.br" value={form.website} onChange={handleChange} />
 
                 <div>
                   <label className="block text-xs font-semibold text-primary/50 mb-2 tracking-wide uppercase">Faturamento Mensal</label>
@@ -373,27 +369,13 @@ const LandingPage = () => {
                   </select>
                 </div>
 
-                <div>
-                  <label className="block text-xs font-semibold text-primary/50 mb-2 tracking-wide uppercase">Qual o seu principal desafio hoje?</label>
-                  <textarea name="main_challenge" value={form.main_challenge} onChange={handleChange} required rows={3} placeholder="Descreva brevemente..."
-                    className="w-full px-4 py-3 rounded-xl border-2 border-primary/15 bg-white text-primary/80 text-sm placeholder:text-primary/25 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none" />
-                </div>
-
-                <label className="flex items-start gap-3 cursor-pointer group">
-                  <input type="checkbox" name="terms_accepted" checked={form.terms_accepted} onChange={handleChange}
-                    className="mt-0.5 w-4 h-4 rounded border-primary/20 text-primary focus:ring-primary focus:ring-offset-0 bg-white" />
-                  <span className="text-xs text-primary/40 group-hover:text-primary/60 transition-colors">
-                    Aceito os termos e políticas de privacidade
-                  </span>
-                </label>
-
                 <button type="submit" disabled={submitting}
                   className="w-full py-4 rounded-full bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-bold text-base transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,68,0,0.35)] hover:scale-[1.02]">
-                  {submitting ? "Enviando..." : "ENVIAR E SOLICITAR QUALIFICAÇÃO"}
+                  {submitting ? "Enviando..." : "ENVIAR PARA ANÁLISE"}
                 </button>
 
-                <p className="text-[10px] text-primary/25 text-center tracking-wide">
-                  Seus dados estão 100% seguros. Não compartilhamos com terceiros.
+                <p className="text-[10px] text-primary/25 text-center tracking-wide leading-relaxed">
+                  Ao clicar em "Enviar para Análise", você aceita nossos termos e políticas de privacidade. Seus dados estão 100% seguros.
                 </p>
               </form>
             </div>
