@@ -28,12 +28,12 @@ const NotQualified = () => {
               </div>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground leading-tight">
-              No momento, seu projeto<br /> não se enquadra no nosso<br className="sm:hidden" /> modelo de aceleração<br className="hidden sm:inline" /> de 30 dias.
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-foreground leading-tight text-balance">
+              No momento, seu projeto não se enquadra no nosso modelo de aceleração de 30 dias.
             </h1>
 
-            <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Nossa metodologia de desenvolvimento<br className="hidden sm:inline" /> ultra-rápido é otimizada para empresas<br className="hidden sm:inline" /> em um estágio específico de operação e escala.<br /><br className="sm:hidden" /> Mas isso não significa que<br className="hidden sm:inline" /> não podemos ajudar você a chegar lá.
+            <p className="text-base sm:text-lg text-muted-foreground max-w-md sm:max-w-xl mx-auto leading-relaxed text-balance">
+              Nossa metodologia de desenvolvimento ultra-rápido é otimizada para empresas em um estágio específico de operação e escala. Mas isso não significa que não podemos ajudar você a chegar lá.
             </p>
           </motion.div>
 
@@ -44,8 +44,8 @@ const NotQualified = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-surface rounded-2xl p-6 sm:p-8 border border-border"
           >
-            <p className="text-muted-foreground leading-relaxed">
-              Acreditamos que a tecnologia e a IA<br className="hidden sm:inline" /> devem ser acessíveis para quem deseja escalar.<br /><br className="sm:hidden" /> Por isso, disponibilizamos materiais gratuitos,<br className="hidden sm:inline" /> estudos de caso e insights de automação<br className="hidden sm:inline" /> em nossas redes sociais para ajudar você<br className="hidden sm:inline" /> a preparar sua operação para o próximo nível.
+            <p className="text-muted-foreground leading-relaxed text-balance">
+              Acreditamos que a tecnologia e a IA devem ser acessíveis para quem deseja escalar. Por isso, disponibilizamos materiais gratuitos, estudos de caso e insights de automação em nossas redes sociais para ajudar você a preparar sua operação para o próximo nível.
             </p>
           </motion.div>
 
@@ -56,8 +56,8 @@ const NotQualified = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="space-y-6"
           >
-            <h2 className="text-lg sm:text-xl font-bold text-foreground">
-              Prepare sua empresa para o futuro<br /> com nossos conteúdos:
+            <h2 className="text-lg sm:text-xl font-bold text-foreground text-balance">
+              Prepare sua empresa para o futuro com nossos conteúdos:
             </h2>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -99,8 +99,8 @@ const NotQualified = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <p className="text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed">
-              Continue acompanhando a 29Tech.<br /> Assim que sua operação atingir o novo patamar,<br className="hidden sm:inline" /> ficaremos felizes em reavaliar seu projeto<br className="hidden sm:inline" /> para uma implementação de elite.
+            <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed text-balance">
+              Continue acompanhando a 29Tech. Assim que sua operação atingir o novo patamar, ficaremos felizes em reavaliar seu projeto para uma implementação de elite.
             </p>
           </motion.div>
         </div>
