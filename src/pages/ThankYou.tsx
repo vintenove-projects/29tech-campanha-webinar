@@ -29,11 +29,11 @@ const ThankYou = () => {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-foreground leading-tight">
-              Projeto Qualificado com Sucesso!
+              Projeto Qualificado<br />com Sucesso!
             </h1>
 
             <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-              Com base nas informações enviadas, sua empresa preenche os requisitos para o modelo de aceleração da 29Tech. Você acaba de dar o primeiro passo para ter seu software personalizado pronto em <strong className="text-foreground">30 dias</strong>.
+              Com base nas informações enviadas,<br className="hidden sm:inline" /> sua empresa preenche os requisitos para<br className="hidden sm:inline" /> o modelo de aceleração da 29Tech.<br /><br className="sm:hidden" /> Você acaba de dar o primeiro passo para ter<br className="hidden sm:inline" /> seu software personalizado pronto em <strong className="text-foreground">30 dias</strong>.
             </p>
           </motion.div>
 
@@ -48,7 +48,7 @@ const ThankYou = () => {
               Próximos Passos
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Nosso time de especialistas analisará os detalhes técnicos do seu desafio. Entraremos em contato diretamente via WhatsApp nas próximas <strong className="text-foreground">24h</strong> para agendar sua{" "}
+              Nosso time de especialistas analisará<br className="hidden sm:inline" /> os detalhes técnicos do seu desafio.<br /><br className="sm:hidden" /> Entraremos em contato diretamente via WhatsApp<br className="hidden sm:inline" /> nas próximas <strong className="text-foreground">24h</strong> para agendar sua{" "}
               <strong className="text-primary">Reunião 01 de Briefing</strong>.
             </p>
           </motion.div>
@@ -61,7 +61,7 @@ const ThankYou = () => {
             className="space-y-6"
           >
             <h2 className="text-lg sm:text-xl font-bold text-foreground">
-              Enquanto aguarda nosso contato, conheça mais sobre nossa tecnologia e cultura:
+              Enquanto aguarda nosso contato,<br /> conheça mais sobre nossa<br className="sm:hidden" /> tecnologia e cultura:
             </h2>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
