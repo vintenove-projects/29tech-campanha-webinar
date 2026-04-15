@@ -85,11 +85,13 @@ const DiagnosticLeftSide = () => {
 };
 
 const DiagnosticForm = () => {
+  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [form, setForm] = useState({
     nome: "",
     whatsapp: "",
     email: "",
+    site: "",
     receita: "",
     prazo: ""
   });
