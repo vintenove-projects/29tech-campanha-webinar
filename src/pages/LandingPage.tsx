@@ -364,6 +364,7 @@ const LandingPage = () => {
                   <select name="monthly_revenue" value={form.monthly_revenue} onChange={handleChange} required
                     className="w-full px-4 py-3 rounded-xl border-2 border-primary/15 bg-white text-foreground text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none">
                     <option value="">Selecione</option>
+                    <option>Abaixo de R$ 80k</option>
                     <option>R$ 80k a R$ 200k</option>
                     <option>R$ 200k a R$ 500k</option>
                     <option>R$ 500k a R$ 1 Milhão</option>
