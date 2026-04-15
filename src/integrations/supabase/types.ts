@@ -53,6 +53,42 @@ export type Database = {
         }
         Relationships: []
       }
+      lead_qualifications: {
+        Row: {
+          company: string
+          created_at: string
+          id: string
+          main_challenge: string
+          monthly_revenue: string
+          name: string
+          role: string
+          terms_accepted: boolean
+          whatsapp: string
+        }
+        Insert: {
+          company: string
+          created_at?: string
+          id?: string
+          main_challenge: string
+          monthly_revenue: string
+          name: string
+          role: string
+          terms_accepted?: boolean
+          whatsapp: string
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          id?: string
+          main_challenge?: string
+          monthly_revenue?: string
+          name?: string
+          role?: string
+          terms_accepted?: boolean
+          whatsapp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
