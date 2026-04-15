@@ -64,7 +64,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="29Tech"
-            className="h-10 transition-all duration-300"
+            className="h-12 sm:h-14 transition-all duration-300"
             style={{ filter: "brightness(0) invert(1)" }}
           />
         </a>
