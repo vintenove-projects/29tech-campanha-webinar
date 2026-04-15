@@ -216,7 +216,7 @@ const LandingPage = () => {
           <FadeIn>
             <img src={logo29Tech} alt="29Tech" className="h-10 sm:h-14 w-auto mx-auto mb-6 sm:mb-8" />
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 text-white text-xs sm:text-sm font-medium mb-8 sm:mb-10 backdrop-blur-sm">
-              <Rocket className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> 29Tech - Software House Global
+              <Rocket className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Software House Global
             </span>
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white mb-5 sm:mb-6 max-w-4xl mx-auto">
               Pare de esperar meses por software:{" "}
