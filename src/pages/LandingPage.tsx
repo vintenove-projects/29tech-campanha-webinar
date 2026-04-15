@@ -5,6 +5,7 @@ import { Target, Rocket, Cpu, Layers, Settings, ArrowRight, CheckCircle2, BookOp
 import { motion } from "framer-motion";
 
 // Logos
+import logo29Tech from "@/assets/logo-29tech.png";
 import logoOab from "@/assets/logos/oab.png";
 import logoHortolandia from "@/assets/logos/hortolandia.png";
 import logoSynkro from "@/assets/logos/synkro.png";
@@ -213,6 +214,7 @@ const LandingPage = () => {
 
         <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 w-full py-16 sm:py-20 text-center">
           <FadeIn>
+            <img src={logo29Tech} alt="29Tech" className="h-10 sm:h-14 w-auto mx-auto mb-6 sm:mb-8" />
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 text-white text-xs sm:text-sm font-medium mb-8 sm:mb-10 backdrop-blur-sm">
               <Rocket className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> 29Tech - Software House Global
             </span>
