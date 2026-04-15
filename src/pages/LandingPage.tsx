@@ -130,12 +130,12 @@ const LogoRow = ({ reverse = false, duration = 25 }: { reverse?: boolean; durati
     >
       {[...Array(4)].map((_, setIdx) =>
         clientLogos.map((logo, i) => (
-          <div key={`${setIdx}-${i}`} className="flex-shrink-0 mx-4 sm:mx-8 flex items-center justify-center" style={{ minWidth: 100 }}>
+          <div key={`${setIdx}-${i}`} className="flex-shrink-0 mx-4 sm:mx-8 flex items-center justify-center" style={{ minWidth: 100, height: 40 }}>
             <img
               src={logo.src}
               alt={logo.alt}
-              className="h-6 sm:h-10 w-auto object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
-              style={{ filter: "brightness(0) opacity(0.4)", maxWidth: 120 }}
+              className="max-h-[32px] sm:max-h-[40px] w-auto object-contain"
+              style={{ filter: "brightness(0) opacity(0.4)", minHeight: 28 }}
               loading="lazy"
             />
           </div>
