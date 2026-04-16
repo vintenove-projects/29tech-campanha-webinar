@@ -89,22 +89,17 @@ const DiagnosticForm = () => {
   const [form, setForm] = useState({
     nome: "",
     whatsapp: "",
-    email: "",
     site: "",
     receita: "",
-    prazo: ""
   });
   const [loading, setLoading] = useState(false);
 
   const receitas = t("diagnostic.revenueOptions", { returnObjects: true }) as string[];
-  const prazos = t("diagnostic.timelineOptions", { returnObjects: true }) as string[];
 
   const isFormValid = () => {
     return form.nome.trim() !== "" &&
            form.whatsapp.trim() !== "" &&
-           form.email.trim() !== "" &&
            form.receita.trim() !== "" &&
-           form.prazo.trim() !== "";
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -122,10 +117,8 @@ const DiagnosticForm = () => {
       formData.append("tipo", "diagnostico");
       formData.append("nome", form.nome);
       formData.append("whatsapp", form.whatsapp);
-      formData.append("email", form.email);
       formData.append("site", form.site);
       formData.append("receita", form.receita);
-      formData.append("prazo", form.prazo);
       formData.append("data", new Date().toLocaleString("pt-BR"));
 
       await fetch(
@@ -212,124 +205,3 @@ const DiagnosticForm = () => {
                 />
               </div>
 
-              {/* Email */}
-              <div>
-                <label className="text-white text-sm font-medium mb-2 block">
-                  {t("diagnostic.fields.email")}
-                </label>
-                <input
-                  type="email"
-                  placeholder={i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "seu@email.com" :
-                               i18n.language === 'en' ? "your@email.com" : "tu@email.com"}
-                  required
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full rounded-lg border-2 border-white/50 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/80 focus:border-white transition-colors"
-                />
-              </div>
-
-
-              {/* Site */}
-              <div>
-                <label className="text-white text-sm font-medium mb-2 block">
-                  {i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "Site da empresa" :
-                   i18n.language === 'en' ? "Company website" : "Sitio web de la empresa"}
-                  <span className="text-white/50 font-normal ml-1">{i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "(opcional)" :
-                   i18n.language === 'en' ? "(optional)" : "(opcional)"}</span>
-                </label>
-                <input
-                  type="url"
-                  placeholder="https://suaempresa.com.br"
-                  value={form.site}
-                  onChange={(e) => setForm({ ...form, site: e.target.value })}
-                  className="w-full rounded-lg border-2 border-white/50 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/80 focus:border-white transition-colors"
-                />
-              </div>
-
-              <div>
-                <label className="text-white text-sm font-medium mb-2 block">
-                  {t("diagnostic.fields.revenue")}
-                </label>
-                <select
-                  required
-                  value={form.receita}
-                  onChange={(e) => setForm({ ...form, receita: e.target.value })}
-                  className="w-full rounded-lg border-2 border-white/50 bg-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/80 focus:border-white appearance-none cursor-pointer transition-colors"
-                >
-                  <option value="" className="bg-background text-foreground">
-                    {i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "Faturamento" :
-                     i18n.language === 'en' ? "Revenue" : "Ingresos"}
-                  </option>
-                  {receitas.map((receita) => (
-                    <option key={receita} value={receita} className="bg-background text-foreground">
-                      {receita}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Prazo */}
-              <div>
-                <label className="text-white text-sm font-medium mb-2 block">
-                  {t("diagnostic.fields.timeline")}
-                </label>
-                <select
-                  required
-                  value={form.prazo}
-                  onChange={(e) => setForm({ ...form, prazo: e.target.value })}
-                  className="w-full rounded-lg border-2 border-white/50 bg-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/80 focus:border-white appearance-none cursor-pointer transition-colors"
-                >
-                  <option value="" className="bg-background text-foreground">
-                    {i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "Selecione o prazo" :
-                     i18n.language === 'en' ? "Select timeline" : "Selecciona plazo"}
-                  </option>
-                  {prazos.map((prazo) => (
-                    <option key={prazo} value={prazo} className="bg-background text-foreground">
-                      {prazo}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Botão */}
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full rounded-lg bg-white text-primary px-6 py-3 text-sm font-semibold hover:bg-white/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              >
-                {loading ? (i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "Enviando..." :
-                            i18n.language === 'en' ? "Sending..." : "Enviando...") : t("diagnostic.button")}
-                <span className="text-lg">→</span>
-              </button>
-
-              {/* Informação de privacidade */}
-              <p className="text-xs text-white text-center mx-auto leading-relaxed max-w-xs">
-                {i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? (
-                  <>
-                    Seus dados estão 100% seguros.<br />
-                    Não compartilhamos com terceiros.
-                  </>
-                ) : i18n.language === 'en' ? (
-                  <>
-                    Your data is 100% safe.<br />
-                    We don't share with third parties.
-                  </>
-                ) : (
-                  <>
-                    Tus datos están 100% seguros.<br />
-                    No compartimos con terceros.
-                  </>
-                )}
-              </p>
-            </div>
-              </form>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default DiagnosticForm;
