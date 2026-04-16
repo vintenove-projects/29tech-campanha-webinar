@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <style>
+      .logo-bg { fill: #ff6b35; }
+      .logo-text { fill: #ffffff; font-family: Arial, sans-serif; font-weight: bold; font-size: 90px; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Background circle -->
+  <circle class="logo-bg" cx="96" cy="96" r="96"/>
+
+  <!-- 29 Text -->
+  <text class="logo-text" x="96" y="125">29</text>
+</svg>
