@@ -187,7 +187,7 @@ const LandingPage = () => {
       return;
     }
     // Qualification: first revenue option (below 80k) → not qualified
-    const isLowRevenue = form.monthly_revenue === "Até R$ 80K";
+    const isLowRevenue = form.monthly_revenue === "Abaixo de R$ 80k";
     const hasNoSite = !form.website || form.website.trim() === "";
 
     // Only redirect on production domain (lpsoftware.vintenove.com)
