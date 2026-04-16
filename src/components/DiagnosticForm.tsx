@@ -88,7 +88,7 @@ const DiagnosticForm = () => {
     nome: "",
     whatsapp: "",
     site: "",
-    receita: "",
+    receita: ""
   });
   const [loading, setLoading] = useState(false);
 
@@ -97,7 +97,7 @@ const DiagnosticForm = () => {
   const isFormValid = () => {
     return form.nome.trim() !== "" &&
            form.whatsapp.trim() !== "" &&
-           form.receita.trim() !== "" &&
+           form.receita.trim() !== "";
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -132,7 +132,7 @@ const DiagnosticForm = () => {
       const revenueOptions = t("diagnostic.revenueOptions", { returnObjects: true }) as string[];
       const isLowRevenue = form.receita === revenueOptions[0];
       const hasNoSite = !form.site || form.site.trim() === "";
-      
+
       if (isLowRevenue || hasNoSite) {
         window.location.href = "/nao-qualificado";
       } else {
@@ -158,48 +158,129 @@ const DiagnosticForm = () => {
           {/* Lado esquerdo - Conteúdo */}
           <DiagnosticLeftSide />
 
-          {/* Lado direito - Formulário ou Mensagem de Sucesso com Flip Animation */}
+          {/* Lado direito - Formulário */}
           <div className="w-full flex justify-center">
             <div className="bg-primary rounded-2xl p-6 sm:p-8 w-full max-w-sm sm:max-w-md xl:max-w-sm">
-                <form onSubmit={handleSubmit} className="w-full">
-            <div className="space-y-5">
-              {/* Nome */}
-              <div>
-                <label className="text-white text-sm font-medium mb-2 block">
-                  {t("diagnostic.fields.name")}
-                </label>
-                <input
-                  type="text"
-                  placeholder={i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "Informe seu nome completo" :
-                               i18n.language === 'en' ? "Enter your full name" : "Ingresa tu nombre completo"}
-                  required
-                  value={form.nome}
-                  onChange={(e) => setForm({ ...form, nome: e.target.value })}
-                  className="w-full rounded-lg border-2 border-white/50 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/80 focus:border-white transition-colors"
-                />
-              </div>
+              <form onSubmit={handleSubmit} className="w-full">
+                <div className="space-y-5">
+                  {/* Nome */}
+                  <div>
+                    <label className="text-white text-sm font-medium mb-2 block">
+                      {t("diagnostic.fields.name")}
+                    </label>
+                    <input
+                      type="text"
+                      placeholder={i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "Informe seu nome completo" :
+                                   i18n.language === 'en' ? "Enter your full name" : "Ingresa tu nombre completo"}
+                      required
+                      value={form.nome}
+                      onChange={(e) => setForm({ ...form, nome: e.target.value })}
+                      className="w-full rounded-lg border-2 border-white/50 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/80 focus:border-white transition-colors"
+                    />
+                  </div>
 
-              {/* WhatsApp */}
-              <div>
-                <label className="text-white text-sm font-medium mb-2 block">
-                  {t("diagnostic.fields.whatsapp")}
-                </label>
-                <input
-                  type="tel"
-                  placeholder="(00) 9 0000-0000"
-                  required
-                  maxLength={15}
-                  value={form.whatsapp}
-                  onChange={(e) => {
-                    const value = e.target.value.replace(/\D/g, '');
-                    if (value.length <= 11) {
-                      const formatted = value
-                        .replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3')
-                        .replace(/(\d{2})(\d{4})(\d{3})/, '($1) $2-$3');
-                      setForm({ ...form, whatsapp: formatted });
-                    }
-                  }}
-                  className="w-full rounded-lg border-2 border-white/50 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/80 focus:border-white transition-colors"
-                />
-              </div>
+                  {/* WhatsApp */}
+                  <div>
+                    <label className="text-white text-sm font-medium mb-2 block">
+                      {t("diagnostic.fields.whatsapp")}
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="(00) 9 0000-0000"
+                      required
+                      maxLength={15}
+                      value={form.whatsapp}
+                      onChange={(e) => {
+                        const value = e.target.value.replace(/\D/g, '');
+                        if (value.length <= 11) {
+                          const formatted = value
+                            .replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3')
+                            .replace(/(\d{2})(\d{4})(\d{3})/, '($1) $2-$3');
+                          setForm({ ...form, whatsapp: formatted });
+                        }
+                      }}
+                      className="w-full rounded-lg border-2 border-white/50 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/80 focus:border-white transition-colors"
+                    />
+                  </div>
 
+                  {/* Site */}
+                  <div>
+                    <label className="text-white text-sm font-medium mb-2 block">
+                      {i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "Site da empresa" :
+                       i18n.language === 'en' ? "Company website" : "Sitio web de la empresa"}
+                      <span className="text-white/50 font-normal ml-1">{i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "(opcional)" :
+                       i18n.language === 'en' ? "(optional)" : "(opcional)"}</span>
+                    </label>
+                    <input
+                      type="url"
+                      placeholder="https://suaempresa.com.br"
+                      value={form.site}
+                      onChange={(e) => setForm({ ...form, site: e.target.value })}
+                      className="w-full rounded-lg border-2 border-white/50 bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/80 focus:border-white transition-colors"
+                    />
+                  </div>
+
+                  {/* Receita */}
+                  <div>
+                    <label className="text-white text-sm font-medium mb-2 block">
+                      {t("diagnostic.fields.revenue")}
+                    </label>
+                    <select
+                      required
+                      value={form.receita}
+                      onChange={(e) => setForm({ ...form, receita: e.target.value })}
+                      className="w-full rounded-lg border-2 border-white/50 bg-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/80 focus:border-white appearance-none cursor-pointer transition-colors"
+                    >
+                      <option value="" className="bg-background text-foreground">
+                        {i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "Faturamento" :
+                         i18n.language === 'en' ? "Revenue" : "Ingresos"}
+                      </option>
+                      {receitas.map((receita) => (
+                        <option key={receita} value={receita} className="bg-background text-foreground">
+                          {receita}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Botão */}
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full rounded-lg bg-white text-primary px-6 py-3 text-sm font-semibold hover:bg-white/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  >
+                    {loading ? (i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "Enviando..." :
+                                i18n.language === 'en' ? "Sending..." : "Enviando...") : t("diagnostic.button")}
+                    <span className="text-lg">→</span>
+                  </button>
+
+                  {/* Informação de privacidade */}
+                  <p className="text-xs text-white text-center mx-auto leading-relaxed max-w-xs">
+                    {i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? (
+                      <>
+                        Seus dados estão 100% seguros.<br />
+                        Não compartilhamos com terceiros.
+                      </>
+                    ) : i18n.language === 'en' ? (
+                      <>
+                        Your data is 100% safe.<br />
+                        We don't share with third parties.
+                      </>
+                    ) : (
+                      <>
+                        Tus datos están 100% seguros.<br />
+                        No compartimos con terceros.
+                      </>
+                    )}
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default DiagnosticForm;
