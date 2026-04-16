@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import Index from "./pages/Index.tsx";
 import LandingPage from "./pages/LandingPage.tsx";
 import ThankYou from "./pages/ThankYou.tsx";
 import NotQualified from "./pages/NotQualified.tsx";
@@ -16,7 +17,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<Index /} />
           <Route path="/lp" element={<LandingPage />} />
           <Route path="/obrigado" element={<ThankYou />} />
           <Route path="/nao-qualificado" element={<NotQualified />} />
