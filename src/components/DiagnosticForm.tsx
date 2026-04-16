@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 const DiagnosticLeftSide = () => {
   const { t } = useTranslation();
@@ -84,7 +83,6 @@ const DiagnosticLeftSide = () => {
 };
 
 const DiagnosticForm = () => {
-  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [form, setForm] = useState({
     nome: "",
@@ -136,9 +134,9 @@ const DiagnosticForm = () => {
       const hasNoSite = !form.site || form.site.trim() === "";
       
       if (isLowRevenue || hasNoSite) {
-        navigate("/nao-qualificado");
+        window.location.href = "/nao-qualificado";
       } else {
-        navigate("/obrigado");
+        window.location.href = "/obrigado";
       }
     } catch (error) {
       console.error("Erro ao enviar:", error);
