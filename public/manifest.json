@@ -1,0 +1,55 @@
+{
+  "name": "29Tech - Diagnóstico de Software",
+  "short_name": "29Tech",
+  "description": "Diagnóstico gratuito de software para sua empresa. Avalie a saúde do seu projeto, identifique gargalos e receba recomendações personalizadas.",
+  "start_url": "https://lpsoftware.vintenove.com/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff6b35",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["business", "technology"],
+  "screenshots": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Diagnóstico Gratuito",
+      "short_name": "Diagnóstico",
+      "description": "Faça seu diagnóstico de software gratuito",
+      "url": "/lp?utm_source=pwa_shortcut",
+      "icons": [
+        {
+          "src": "/favicon-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "categories": ["business", "technology"]
+}

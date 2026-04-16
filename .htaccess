@@ -7,3 +7,60 @@
   RewriteCond %{HTTP_HOST} ^www\.lpsoftware\.vintenove\.com$
   RewriteRule ^(.*)$ https://29tech-campanha-software.vercel.app/$1 [L,R=301]
 </IfModule>
+
+# SEO & Security Headers
+<IfModule mod_headers.c>
+  # Remove server signature
+  Header always unset "X-Powered-By"
+  Header unset "X-Powered-By"
+
+  # Security headers
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+  # Cache control for static assets
+  Header set Cache-Control "public, max-age=31536000, immutable" "expr=%{CONTENT_TYPE} =~ m#^(application/x-font-woff|font/woff2|image)#"
+  Header set Cache-Control "public, max-age=604800" "expr=%{CONTENT_TYPE} =~ m#^application/javascript#"
+  Header set Cache-Control "public, max-age=3600" "expr=%{CONTENT_TYPE} =~ m#^text/css#"
+
+  # No cache for HTML
+  Header set Cache-Control "public, max-age=0, must-revalidate" "expr=%{CONTENT_TYPE} =~ m#^text/html#"
+</IfModule>
+
+# Gzip compression for text-based assets
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml+rss application/atom+xml image/svg+xml
+</IfModule>
+
+# Cache expires headers
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Default
+  ExpiresDefault "access plus 1 month"
+
+  # HTML files
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # CSS and JavaScript
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+
+  # Images
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fonts
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+  ExpiresByType application/x-font-ttf "access plus 1 year"
+</IfModule>

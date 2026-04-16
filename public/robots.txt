@@ -1,7 +1,23 @@
-User-agent: Googlebot
+# Robots.txt for lpsoftware.vintenove.com
+# Allow all bots to crawl the site
+
+User-agent: *
 Allow: /
 
+# Specific bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
 User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
 Allow: /
 
 User-agent: Twitterbot
@@ -10,7 +26,17 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
+User-agent: LinkedInBot
 Allow: /
 
-Sitemap: https://www.vintenove.com/sitemap.xml
+# Disallow private areas
+Disallow: /admin
+Disallow: /private
+Disallow: /api
+
+# Sitemap location
+Sitemap: https://lpsoftware.vintenove.com/sitemap.xml
+
+# Policy enforcement
+User-agent: MJ12bot
+Allow: /
