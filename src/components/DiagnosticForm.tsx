@@ -128,16 +128,12 @@ const DiagnosticForm = () => {
         }
       );
 
-      // Qualification: first revenue option (below 80k) → not qualified
-      const revenueOptions = t("diagnostic.revenueOptions", { returnObjects: true }) as string[];
-      const isLowRevenue = form.receita === revenueOptions[0];
-      const hasNoSite = !form.site || form.site.trim() === "";
-
-      if (isLowRevenue || hasNoSite) {
-        window.location.href = "/nao-qualificado";
-      } else {
-        window.location.href = "/obrigado";
-      }
+      // Form submitted successfully - just show success message
+      alert(i18n.language === 'pt-BR' || i18n.language === 'pt-PT'
+        ? "Diagnóstico enviado com sucesso!"
+        : i18n.language === 'en'
+        ? "Diagnostic sent successfully!"
+        : "¡Diagnóstico enviado con éxito!");
     } catch (error) {
       console.error("Erro ao enviar:", error);
       alert(i18n.language === 'pt-BR' || i18n.language === 'pt-PT'

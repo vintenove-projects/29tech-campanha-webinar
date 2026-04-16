@@ -190,10 +190,20 @@ const LandingPage = () => {
     const isLowRevenue = form.monthly_revenue === "Até R$ 80K";
     const hasNoSite = !form.website || form.website.trim() === "";
 
-    if (isLowRevenue || hasNoSite) {
-      window.location.href = "/nao-qualificado";
+    // Only redirect on production domain (lpsoftware.vintenove.com)
+    const isProduction = window.location.hostname === "lpsoftware.vintenove.com" ||
+                        window.location.hostname.includes("29tech-campanha-software.vercel.app");
+
+    if (isProduction) {
+      if (isLowRevenue || hasNoSite) {
+        window.location.href = "/nao-qualificado";
+      } else {
+        window.location.href = "/obrigado";
+      }
     } else {
-      window.location.href = "/obrigado";
+      // On dev/test environments, just show success message
+      setSubmitting(false);
+      toast.success("Diagnóstico enviado com sucesso!");
     }
   };
 
