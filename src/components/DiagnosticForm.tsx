@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -96,7 +95,6 @@ const DiagnosticForm = () => {
     prazo: ""
   });
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const receitas = t("diagnostic.revenueOptions", { returnObjects: true }) as string[];
   const prazos = t("diagnostic.timelineOptions", { returnObjects: true }) as string[];
@@ -170,22 +168,8 @@ const DiagnosticForm = () => {
           <DiagnosticLeftSide />
 
           {/* Lado direito - Formulário ou Mensagem de Sucesso com Flip Animation */}
-          <div style={{ perspective: "1000px" }} className="w-full flex justify-center">
-            <motion.div
-              initial={{ rotateY: 0 }}
-              animate={{ rotateY: submitted ? 180 : 0 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-              style={{
-                transformStyle: "preserve-3d",
-              }}
-              className="relative bg-primary rounded-2xl p-6 sm:p-8 min-h-[580px] flex flex-col items-center justify-center w-full max-w-sm sm:max-w-md xl:max-w-sm"
-            >
-              {/* Front - Formulário */}
-              <div
-                style={{
-                  backfaceVisibility: "hidden",
-                }}
-              >
+          <div className="w-full flex justify-center">
+            <div className="bg-primary rounded-2xl p-6 sm:p-8 w-full max-w-sm sm:max-w-md xl:max-w-sm">
                 <form onSubmit={handleSubmit} className="w-full">
             <div className="space-y-5">
               {/* Nome */}
@@ -338,54 +322,9 @@ const DiagnosticForm = () => {
                 )}
               </p>
             </div>
-                </form>
-              </div>
+              </form>
+            </div>
 
-              {/* Back - Mensagem de Obrigado */}
-              <div
-                style={{
-                  backfaceVisibility: "hidden",
-                  transform: "rotateY(180deg)",
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                }}
-                className="rounded-2xl p-8 sm:p-10 flex flex-col items-center justify-center"
-              >
-                <div className="text-center w-full">
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: submitted ? 1 : 0 }}
-                    transition={{ delay: 0.4, duration: 0.5 }}
-                    className="mb-6"
-                  >
-                    <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mx-auto">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: submitted ? 1 : 0 }}
-                    transition={{ delay: 0.5, duration: 0.5 }}
-                  >
-                    <h3 className="text-2xl sm:text-3xl font-light text-white mb-4">
-                      {t("diagnostic.success")}
-                    </h3>
-                    <p className="text-white/90 text-base sm:text-lg mb-6 leading-relaxed">
-                      {t("diagnostic.successMessage")}
-                    </p>
-                    <p className="text-white/70 text-sm">
-                      {i18n.language === 'pt-BR' || i18n.language === 'pt-PT' ? "Em breve você receberá uma análise completa por WhatsApp e email." :
-                       i18n.language === 'en' ? "You'll soon receive a complete analysis via WhatsApp and email." : "Pronto recibirás un análisis completo por WhatsApp y correo electrónico."}
-                    </p>
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </div>
