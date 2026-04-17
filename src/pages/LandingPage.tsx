@@ -1,6 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
 import { Target, Rocket, Cpu, Layers, Settings, ArrowRight, BookOpen, Users, TrendingDown, Award, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -176,34 +174,31 @@ const LandingPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    const { error } = await supabase.from("lead_qualifications").insert({
-      name: form.name.trim(), whatsapp: form.whatsapp.trim(),
-      website: form.website.trim(), monthly_revenue: form.monthly_revenue,
-      terms_accepted: true,
-    });
-    if (error) {
-      setSubmitting(false);
-      toast.error("Erro ao enviar. Tente novamente.");
-      return;
+
+    try {
+      const formData = new FormData();
+      formData.append("tipo", "lp");
+      formData.append("nome", form.name.trim());
+      formData.append("whatsapp", form.whatsapp.trim());
+      formData.append("site", form.website.trim());
+      formData.append("receita", form.monthly_revenue);
+      formData.append("data", new Date().toLocaleString("pt-BR"));
+
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbwlGp-41K4So3DTNcBENVTDkLr1O-kaOJe9NRjxQ-LQA9uHhcNJb-CWY6GX_gLoLWI/exec",
+        { method: "POST", mode: "no-cors", body: formData }
+      );
+    } catch (_) {
+      // no-cors não retorna resposta, ignorar
     }
-    // Qualification: first revenue option (below 80k) → not qualified
+
     const isLowRevenue = form.monthly_revenue === "Abaixo de R$ 80k";
     const hasNoSite = !form.website || form.website.trim() === "";
 
-    // Only redirect on production domain (lpsoftware.vintenove.com)
-    const isProduction = window.location.hostname === "lpsoftware.vintenove.com" ||
-                        window.location.hostname.includes("29tech-campanha-software.vercel.app");
-
-    if (isProduction) {
-      if (isLowRevenue || hasNoSite) {
-        window.location.href = "/nao-qualificado";
-      } else {
-        window.location.href = "/obrigado";
-      }
+    if (isLowRevenue || hasNoSite) {
+      window.location.href = "/nao-qualificado";
     } else {
-      // On dev/test environments, just show success message
-      setSubmitting(false);
-      toast.success("Diagnóstico enviado com sucesso!");
+      window.location.href = "/obrigado";
     }
   };
 
