@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Target, Rocket, Cpu, Layers, Settings, ArrowRight, BookOpen, Users, TrendingDown, Award, Globe } from "lucide-react";
+import { Target, Rocket, Cpu, Layers, Settings, ArrowRight, BookOpen, Users, TrendingDown, Award, Globe, CheckCircle, AlertTriangle, Zap, FileText, MessageCircle, HelpCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 // Logos
@@ -28,7 +28,7 @@ const clientLogos = [
   { src: logoExtra, alt: "Cliente" },
 ];
 
-/* ─── Particle Canvas (white particles on orange) ─── */
+/* ─── Particle Canvas ─── */
 const ParticleCanvas = ({ color = "rgba(255,255,255,0.12)" }: { color?: string }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef({ x: -9999, y: -9999 });
@@ -143,7 +143,7 @@ const LogoRow = ({ reverse = false, duration = 25 }: { reverse?: boolean; durati
   </div>
 );
 
-/* ─── Logo Marquee (3 rows, alternating directions) ─── */
+/* ─── Logo Marquee ─── */
 const LogoMarquee = () => (
   <section className="py-10 sm:py-20 overflow-hidden bg-white">
     <FadeIn className="text-center mb-6 sm:mb-10">
@@ -207,29 +207,47 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden" style={{ fontFamily: "'Bricolage Grotesque', sans-serif" }}>
 
-      {/* ══════════ HERO — Laranja ══════════ */}
+      {/* ══════════ HERO ══════════ */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-primary">
         <ParticleCanvas color="rgba(255,255,255,0.13)" />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 w-full py-16 sm:py-20 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 w-full pt-12 pb-14 sm:py-20 text-center">
           <FadeIn>
-            <img src={logo29Tech} alt="29Tech" className="h-12 sm:h-16 w-auto mx-auto mb-6 sm:mb-8" />
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 text-white text-xs sm:text-sm font-medium mb-8 sm:mb-10 backdrop-blur-sm">
-              <Rocket className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Software House Global
-            </span>
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white mb-5 sm:mb-6 max-w-4xl mx-auto">
-              Pare de esperar meses por software:{" "}
+            <img src={logo29Tech} alt="29Tech" className="h-10 sm:h-16 w-auto mx-auto mb-5 sm:mb-8" />
+            <div className="flex flex-wrap justify-center gap-2 mb-6 sm:mb-10">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/30 bg-white/10 text-white text-[11px] sm:text-sm font-medium backdrop-blur-sm">
+                <Zap className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" /> Workshop Ao Vivo
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/30 bg-white/10 text-white text-[11px] sm:text-sm font-medium backdrop-blur-sm">
+                <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" /> 100% Gratuito
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/30 bg-white/10 text-white text-[11px] sm:text-sm font-medium backdrop-blur-sm">
+                <Users className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" /> Exclusivo para Empresários
+              </span>
+            </div>
+            <h1 className="text-[1.6rem] leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 sm:mb-6 max-w-4xl mx-auto">
+              Bastidores da IA:{" "}
               <span className="text-white/90">
-                Você traz o desafio hoje e vê o MVP pronto no nosso próximo encontro.
+                Onde você não apenas assiste, mas constrói seu produto personalizado com nossa metodologia.
               </span>
             </h1>
-            <p className="text-white/90 text-sm sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed">
-              Desenvolvemos soluções personalizadas com IA para reduzir seus custos operacionais e escalar sua empresa. Se o seu projeto for aprovado, você testa o MVP funcional na segunda reunião e recebe o software completo em até 30 dias.
+            <p className="text-white/85 text-sm sm:text-lg md:text-xl max-w-2xl mx-auto mb-7 sm:mb-12 leading-relaxed">
+              Acesse a operação real da 29Tech. Veja como usamos Inteligência Artificial para escalar nossos projetos internos, conheça as soluções que entregamos para nossos clientes e saia do evento com o desenho de um produto de IA focado 100% no seu negócio.
             </p>
-            <button onClick={scrollToForm} className="group inline-flex items-center gap-2 sm:gap-3 rounded-full bg-white px-7 py-4 sm:px-10 sm:py-5 text-primary font-bold text-base sm:text-lg hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(255,255,255,0.3)]">
-              APLICAR MEU PROJETO
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <div className="flex flex-col items-stretch sm:items-center gap-3 sm:gap-4 px-1 sm:px-0">
+              <button onClick={scrollToForm} className="group flex items-center justify-center gap-2 rounded-full bg-white px-6 py-4 sm:px-10 sm:py-5 text-primary font-bold text-sm sm:text-lg hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_rgba(255,255,255,0.3)] w-full sm:w-auto">
+                QUERO GARANTIR MINHA VAGA
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+              </button>
+              <a
+                href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+tenho+uma+d%C3%BAvida+sobre+o+workshop+Bastidores+da+IA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/75 text-xs sm:text-sm underline underline-offset-4 decoration-white/40 hover:text-white hover:decoration-white transition-colors text-center"
+              >
+                Tenho uma dúvida específica e quero falar no WhatsApp
+              </a>
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -237,45 +255,74 @@ const LandingPage = () => {
       {/* ══════════ LOGOS MARQUEE ══════════ */}
       <LogoMarquee />
 
-      {/* ══════════ DOR — Laranja claro ══════════ */}
-      <section className="py-14 sm:py-28 px-5 bg-primary relative overflow-hidden">
+      {/* ══════════ DOR ══════════ */}
+      <section className="py-10 sm:py-28 px-4 sm:px-5 bg-primary relative overflow-hidden">
         <ParticleCanvas color="rgba(255,255,255,0.08)" />
         <FadeIn className="relative z-10 max-w-3xl mx-auto text-center">
           <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/15 border border-white/25 flex items-center justify-center mx-auto mb-6 sm:mb-8">
-            <Target className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+            <AlertTriangle className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
           </div>
           <p className="text-lg sm:text-2xl md:text-3xl text-white/90 leading-relaxed font-light">
-            O mercado não espera. Cada dia com processos manuais ou softwares lentos é{" "}
-            <span className="text-white font-semibold">dinheiro saindo do seu caixa</span>. Você não precisa de um cronograma de 6 meses; precisa de{" "}
-            <span className="text-white font-bold underline decoration-white/50 underline-offset-4">execução 29Tech</span>.
+            O mercado está inundado de "especialistas" em IA que só entregam teoria e conceitos abstratos. Enquanto isso, sua empresa continua perdendo eficiência em processos manuais lentos ou tentando implementar ferramentas genéricas que não resolvem o seu problema real. O resultado?{" "}
+            <span className="text-white font-bold">Desperdício de tempo, capital e a sensação de estar ficando para trás na corrida tecnológica.</span>
           </p>
         </FadeIn>
       </section>
 
-      {/* ══════════ MÉTODO — Branco ══════════ */}
-      <section className="py-16 sm:py-32 px-5 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn className="text-center mb-10 sm:mb-16">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-primary mb-2 sm:mb-3">
-              Método 29Tech
+      {/* ══════════ PROPOSTA DE VALOR — Branco ══════════ */}
+      <section className="py-10 sm:py-32 px-4 sm:px-5 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <FadeIn>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-primary mb-6 sm:mb-8">
+              A 29Tech não apenas fala de IA — nós operamos com ela
             </h2>
-            <p className="text-foreground/50 text-sm sm:text-lg">Do desafio à solução em 3 passos.</p>
+            <p className="text-foreground/70 text-base sm:text-xl leading-relaxed max-w-3xl mx-auto">
+              No <strong className="text-foreground">Bastidores da IA</strong>, abrimos nossa "caixa-preta". Você verá o fluxo real de desenvolvimento que nos permite entregar com velocidade e qualidade acima da média. É a oportunidade de parar de experimentar sem rumo e começar a implementar o que realmente gera ROI.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ══════════ COMO FUNCIONA ══════════ */}
+      <section className="py-10 sm:py-32 px-4 sm:px-5 bg-primary relative overflow-hidden">
+        <ParticleCanvas color="rgba(255,255,255,0.10)" />
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <FadeIn className="text-center mb-10 sm:mb-16">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-3">
+              Como Funciona
+            </h2>
+            <p className="text-white/70 text-sm sm:text-lg">O que acontece durante o workshop.</p>
           </FadeIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8">
             {[
-              { step: "01", title: "Qualificação", desc: "Preencha o formulário detalhando seu desafio e faturamento. Analisamos se o seu projeto se encaixa no nosso modelo de escala.", icon: Target },
-              { step: "02", title: "Briefing e MVP", desc: "Na Reunião 01 alinhamos o escopo. Na Reunião 02, você testa o MVP funcional em tempo real.", icon: Cpu },
-              { step: "03", title: "Entrega em 30 Dias", desc: "Com o MVP validado, finalizamos a implementação e escalamos sua solução para entrega final em um mês.", icon: Rocket },
+              {
+                step: "01",
+                title: "Imersão nos Bastidores",
+                desc: "Veja por dentro as automações e processos de IA que a 29Tech utiliza para acelerar sua própria produção.",
+                icon: Cpu,
+              },
+              {
+                step: "02",
+                title: "Casos Reais",
+                desc: "Demonstração prática de produtos de IA que construímos para nossos clientes e os resultados financeiros que eles geraram.",
+                icon: TrendingDown,
+              },
+              {
+                step: "03",
+                title: "Oficina Mão na Massa",
+                desc: "Durante a call, ajudaremos você a estruturar o escopo de um produto de IA personalizado para resolver o maior gargalo da sua empresa hoje.",
+                icon: Target,
+              },
             ].map((item, i) => (
               <FadeIn key={item.step} delay={i * 0.12}>
-                <div className="group text-center p-6 sm:p-8 rounded-2xl border-2 border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(255,68,0,0.08)] h-full">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:bg-primary/20 transition-colors">
-                    <item.icon className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
+                <div className="group text-center p-6 sm:p-8 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 h-full">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/15 flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:bg-white/25 transition-colors">
+                    <item.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <span className="text-[10px] sm:text-[11px] font-bold text-foreground/35 tracking-[0.25em]">PASSO {item.step}</span>
-                  <h3 className="text-lg sm:text-xl font-bold mt-2 mb-2 sm:mb-3 text-foreground">{item.title}</h3>
-                  <p className="text-foreground/60 leading-relaxed text-xs sm:text-sm">{item.desc}</p>
+                  <span className="text-[10px] sm:text-[11px] font-bold text-white/50 tracking-[0.25em]">PASSO {item.step}</span>
+                  <h3 className="text-lg sm:text-xl font-bold mt-2 mb-2 sm:mb-3 text-white">{item.title}</h3>
+                  <p className="text-white/75 leading-relaxed text-xs sm:text-sm">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -283,55 +330,35 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* ══════════ POR QUE A 29TECH — Prova Social ══════════ */}
-      <section className="py-16 sm:py-32 px-5 relative overflow-hidden bg-primary">
-        <ParticleCanvas color="rgba(255,255,255,0.10)" />
-        <div className="relative z-10 max-w-5xl mx-auto">
+      {/* ══════════ PROVA E CREDIBILIDADE — Branco ══════════ */}
+      <section className="py-10 sm:py-32 px-4 sm:px-5 bg-white">
+        <div className="max-w-5xl mx-auto">
           <FadeIn className="text-center mb-10 sm:mb-16">
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-              Por que a 29Tech
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-primary">
+              Engenharia Sênior. Resultados Reais.
             </h2>
+            <p className="text-foreground/50 text-sm sm:text-lg mt-3 max-w-2xl mx-auto">
+              A 29Tech é referência em Squads de Elite que sustentam sistemas robustos e implementam IA onde ela realmente traz lucro e escala, fugindo do óbvio.
+            </p>
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
             {[
-              {
-                icon: BookOpen,
-                stat: "Framework 29",
-                desc: "Metodologia própria de desenvolvimento, testada e publicada em artigo científico.",
-              },
-              {
-                icon: Users,
-                stat: "+100",
-                desc: "Empresas atendidas com soluções de software personalizadas.",
-              },
-              {
-                icon: TrendingDown,
-                stat: "<8%",
-                desc: "Churn dos nossos clientes. Retenção é consequência de resultado.",
-              },
-              {
-                icon: Award,
-                stat: "ISTOÉ",
-                desc: "Reconhecimento de mercado.",
-                link: "https://www.instagram.com/p/DTTeQElDP8E/",
-                linkLabel: "Ver publicação",
-              },
-              {
-                icon: Globe,
-                stat: "Global",
-                desc: "Clientes atendidos no Brasil e na Europa.",
-              },
+              { icon: BookOpen, stat: "Framework 29", desc: "Metodologia própria de desenvolvimento, testada e publicada em artigo científico." },
+              { icon: Users, stat: "+100", desc: "Empresas atendidas com soluções de software personalizadas." },
+              { icon: TrendingDown, stat: "<8%", desc: "Churn dos nossos clientes. Retenção é consequência de resultado." },
+              { icon: Award, stat: "ISTOÉ", desc: "Reconhecimento de mercado.", link: "https://www.instagram.com/p/DTTeQElDP8E/", linkLabel: "Ver publicação" },
+              { icon: Globe, stat: "Global", desc: "Clientes atendidos no Brasil e na Europa." },
             ].map((item, i) => (
               <FadeIn key={item.stat} delay={i * 0.08}>
-                <div className="group p-5 sm:p-6 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm hover:bg-white/15 transition-all duration-300 h-full flex flex-row sm:flex-col items-center sm:items-center text-left sm:text-center gap-4 sm:gap-0">
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0 sm:mb-4 group-hover:bg-white/25 transition-colors">
-                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                <div className="group p-5 sm:p-6 rounded-2xl border-2 border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-[0_8px_40px_rgba(255,68,0,0.08)] h-full flex flex-row sm:flex-col items-center sm:items-center text-left sm:text-center gap-4 sm:gap-0">
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 sm:mb-4 group-hover:bg-primary/20 transition-colors">
+                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                   </div>
                   <div className="flex-1 sm:flex-none">
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white mb-1 sm:mb-2">{item.stat}</h3>
-                    <p className="text-white/80 leading-relaxed text-xs sm:text-sm">{item.desc}</p>
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-primary mb-1 sm:mb-2">{item.stat}</h3>
+                    <p className="text-foreground/60 leading-relaxed text-xs sm:text-sm">{item.desc}</p>
                     {item.link && (
-                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-2 sm:mt-3 inline-flex items-center gap-1 text-xs font-semibold text-white hover:text-white underline underline-offset-4 decoration-white/50 hover:decoration-white transition-colors">
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="mt-2 sm:mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-primary underline underline-offset-4 decoration-primary/50 hover:decoration-primary transition-colors">
                         {item.linkLabel} <ArrowRight className="w-3 h-3" />
                       </a>
                     )}
@@ -343,16 +370,50 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* ══════════ O QUE ESTÁ INCLUSO ══════════ */}
+      <section className="py-10 sm:py-28 px-4 sm:px-5 bg-primary relative overflow-hidden">
+        <ParticleCanvas color="rgba(255,255,255,0.08)" />
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <FadeIn className="text-center mb-10 sm:mb-14">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+              O que está incluso
+            </h2>
+          </FadeIn>
+          <div className="space-y-4">
+            {[
+              "Acesso exclusivo ao workshop ao vivo e prático.",
+              "Framework 29Tech de Implementação de IA (PDF).",
+              "Sessão de mentoria coletiva para desenho do seu produto.",
+              "Acesso direto aos nossos especialistas para tirar dúvidas de viabilidade.",
+            ].map((item, i) => (
+              <FadeIn key={i} delay={i * 0.08}>
+                <div className="flex items-start gap-4 p-5 sm:p-6 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm">
+                  <CheckCircle className="w-6 h-6 text-white flex-shrink-0 mt-0.5" />
+                  <p className="text-white text-sm sm:text-base leading-relaxed">{item}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ══════════ FORMULÁRIO — Branco ══════════ */}
-      <section id="qualification-form" className="py-16 sm:py-32 px-5 bg-white">
+      <section id="qualification-form" className="py-10 sm:py-32 px-4 sm:px-5 bg-white">
         <div className="max-w-2xl mx-auto">
           <FadeIn>
-            <div className="p-6 sm:p-8 md:p-12 rounded-3xl border-2 border-primary/15 shadow-[0_8px_60px_rgba(255,68,0,0.06)]">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-2 text-primary">
-                Inicie sua Qualificação
+            <div className="text-center mb-8 sm:mb-10">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-4">
+                Vagas Limitadas
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-primary mb-3">
+                Garanta sua vaga no Workshop
               </h2>
-              <p className="text-foreground/50 text-center mb-8 sm:mb-10 text-xs sm:text-sm">Preencha os dados abaixo para começarmos.</p>
+              <p className="text-foreground/50 text-xs sm:text-sm max-w-md mx-auto">
+                Para garantir que todos os participantes consigam interagir e sair com seu produto desenhado, restringimos o número de inscritos.
+              </p>
+            </div>
 
+            <div className="p-6 sm:p-8 md:p-12 rounded-3xl border-2 border-primary/15 shadow-[0_8px_60px_rgba(255,68,0,0.06)]">
               <form onSubmit={handleSubmit} className="space-y-5">
                 <LPInput label="Nome Completo" name="name" value={form.name} onChange={handleChange} required />
                 <LPInput label="WhatsApp com DDD" name="whatsapp" type="tel" placeholder="(11) 99999-9999" value={form.whatsapp} onChange={handleChange} required />
@@ -372,18 +433,68 @@ const LandingPage = () => {
                 </div>
 
                 <button type="submit" disabled={submitting}
-                  className="w-full py-4 rounded-full bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-bold text-base transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,68,0,0.35)] hover:scale-[1.02]">
-                  {submitting ? "Enviando..." : "ENVIAR PARA ANÁLISE"}
+                  className="w-full py-4 rounded-full bg-primary hover:bg-primary/90 disabled:opacity-50 text-white font-bold text-sm sm:text-base transition-all duration-300 hover:shadow-[0_0_40px_rgba(255,68,0,0.35)] hover:scale-[1.02]">
+                  {submitting ? "Enviando..." : "QUERO GARANTIR MINHA VAGA NO WORKSHOP"}
                 </button>
 
+                <div className="text-center">
+                  <a
+                    href="https://wa.me/5511999999999?text=Ol%C3%A1%2C+tenho+uma+d%C3%BAvida+sobre+o+workshop+Bastidores+da+IA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs text-foreground/50 hover:text-primary transition-colors underline underline-offset-4"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    Tenho uma dúvida específica e quero falar no WhatsApp
+                  </a>
+                </div>
+
                 <p className="text-[10px] text-foreground/35 text-center tracking-wide leading-relaxed">
-                  Ao clicar em "Enviar para Análise", você aceita<br />
+                  Ao clicar em "Quero Garantir Minha Vaga", você aceita<br />
                   nossos termos e políticas de privacidade.<br />
                   Seus dados estão 100% seguros.
                 </p>
               </form>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* ══════════ QUEBRA DE OBJEÇÕES ══════════ */}
+      <section className="py-10 sm:py-28 px-4 sm:px-5 bg-primary relative overflow-hidden">
+        <ParticleCanvas color="rgba(255,255,255,0.07)" />
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <FadeIn className="text-center mb-10 sm:mb-14">
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
+              Dúvidas Frequentes
+            </h2>
+          </FadeIn>
+          <div className="space-y-4">
+            {[
+              {
+                q: "Preciso entender de programação?",
+                a: "Não. O foco é em estratégia de produto e eficiência de negócio. A IA é o meio, o resultado é o seu lucro.",
+              },
+              {
+                q: "Serve para o meu setor?",
+                a: "Sim. Se sua empresa possui processos digitais ou lida com dados e escala, a metodologia da 29Tech é aplicável.",
+              },
+              {
+                q: "O workshop é gravado?",
+                a: "Não. É um evento ao vivo para permitir a interação e a construção personalizada que prometemos.",
+              },
+            ].map((item, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="p-6 sm:p-8 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm">
+                  <div className="flex items-start gap-3 mb-3">
+                    <HelpCircle className="w-5 h-5 text-white/70 flex-shrink-0 mt-0.5" />
+                    <h3 className="text-white font-bold text-sm sm:text-base">"{item.q}"</h3>
+                  </div>
+                  <p className="text-white/75 text-sm leading-relaxed pl-8">{item.a}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
